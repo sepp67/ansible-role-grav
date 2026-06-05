@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+
+# Ansible
+*.retry
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Local docker volumes
+data/
+tmp/
+
+# Grav cache
+grav/user/cache/
+grav/cache/
+
+# Grav logs
+grav/logs/
+
+# Grav backups
+grav/backup/
+
+# Environment files
+.env
+
+# Ansible Vault temporary files
+*.vault
+
+# Terraform (si un jour tu l'ajoutes)
+.terraform/
+terraform.tfstate*
