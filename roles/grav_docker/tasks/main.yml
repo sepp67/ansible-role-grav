@@ -1,0 +1,31 @@
+---
+- name: Create Grav directories
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    owner: root
+    group: root
+    mode: "0755"
+  loop:
+    - "{{ grav_base_dir }}"
+    - "{{ grav_data_dir }}"
+
+- name: Deploy docker-compose for Grav
+  ansible.builtin.template:
+    src: docker-compose.yml.j2
+    dest: "{{ grav_base_dir }}/docker-compose.yml"
+    owner: root
+    group: root
+    mode: "0644"
+
+- name: Pull Grav image
+  community.docker.docker_image:
+    name: "{{ grav_image }}"
+    source: pull
+    force_source: true
+
+- name: Start Grav container
+  community.docker.docker_compose_v2:
+    project_src: "{{ grav_base_dir }}"
+    state: present
+    pull: always

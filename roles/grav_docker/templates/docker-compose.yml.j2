@@ -1,0 +1,9 @@
+services:
+  grav:
+    image: "{{ grav_image }}"
+    container_name: "{{ grav_container_name }}"
+    restart: "{{ grav_restart_policy }}"
+    ports:
+      - "{{ grav_http_port }}:80"
+    volumes:
+      - "{{ grav_data_dir }}:/var/www/html/user"

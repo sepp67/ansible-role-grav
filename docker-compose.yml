@@ -1,0 +1,12 @@
+services:
+  grav:
+    build: .
+    container_name: grav-local
+    ports:
+      - "8080:80"
+    volumes:
+      - grav_user:/var/www/html/user
+    restart: unless-stopped
+
+volumes:
+  grav_user:
