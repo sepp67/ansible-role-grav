@@ -3,7 +3,7 @@ grav_container_name: grav
 grav_image: "ghcr.io/sepp67/grav-nginx:latest"
 grav_http_port: 18090
 
-grav_base_dir: /opt/grav
-grav_data_dir: "{{ grav_base_dir }}/data"
+grav_base_dir: /opt/grav-docs
+grav_data_dir: "{{ grav_base_dir }}/user"
 
 grav_restart_policy: unless-stopped
