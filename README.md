@@ -8,50 +8,7 @@ Local development with Docker Compose
 Automated image builds with GitHub Actions
 Image storage in GitHub Container Registry (GHCR)
 Automated deployment with Ansible
-Separate staging and production environments
-Architecture
-Developer
-    │
-    ├── git push
-    │
-    ▼
-GitHub Repository
-    │
-    ├── GitHub Actions
-    │
-    ▼
-GHCR Docker Registry
-    │
-    ├── ghcr.io/sepp67/grav-nginx:staging
-    └── ghcr.io/sepp67/grav-nginx:prod
-    │
-    ▼
-Ansible
-    │
-    ▼
-Docker Host
-    │
-    ▼
-Grav CMS Container
-Repository Structure
-ansible-role-grav/
-├── .github/
-│   └── workflows/
-├── docker/
-│   ├── entrypoint.sh
-│   ├── nginx.conf
-│   └── php-fpm.conf
-├── grav/
-│   └── user/
-├── inventory/
-├── playbooks/
-├── roles/
-│   └── grav_docker/
-├── Dockerfile
-├── docker-compose.yml
-├── requirements.txt
-├── requirements.yml
-└── README.md
+
 Features
 Grav CMS with Admin Plugin
 Nginx and PHP-FPM in a single container
